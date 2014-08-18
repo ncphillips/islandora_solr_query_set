@@ -99,27 +99,34 @@ it was published before 2014).
       )
     )
 
-### Relationship Examples
+### Relationship Examples (NOT COMPLETED)
 Relationship arrays will be used in the IslandoraQuerysetResult object to
-generate queries for finding it's relative objects. This grammar does not follow
-the field's or fa
+generate queries for finding it's relative objects.
 
 All objects related to this one.
 
     array( )
 
-All objects with a fedora-system:isMemberOf or fedora-system:isMetadataFor
-relationship to the current object.
+All objects with a fedora-system:isMemberOf, fedora-system:isMetadataFor, or
+islandora:hasBookPage, relationship to the current object.
 
     array(
-      array(
-        'alias' => 'fedora-system',
-        'url' => 'info:fedora/fedora-system:def/relations-external#',
-        'relationships' => array(
-          'isMemberOf',
+      '#aliases' => array(
+        'fedora' => 'info:fedora/fedora-system:def/relations-external#',
+        'fedora-system' => 'info:fedora/fedora-system:def/relations-external#'
+        'islandora' => 'http://islandora.ca/ontology/relsext#'
+      ),
+      'fedora-system' => array(
+        'isMemberOf',
+        '#or' => array(
           'isMetadataFor',
         ),
-      )
+      ),
+      '#or' => array(
+        'islandora' => array(
+          'hasBookPage',
+        ),
+      ),
     )
 
 
@@ -127,6 +134,9 @@ relationship to the current object.
 These are the grammar's describing the arrays. They have not been placed in
 Chompsky Normal Form, because I believe doing reduces some redundancy and makes
  things easier to read.
+
+ That being said, markdown is not exactly the best way to write out grammar's, so
+ bear with me.
 
 #### Exponents
 

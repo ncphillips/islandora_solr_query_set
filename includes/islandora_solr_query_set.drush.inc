@@ -38,9 +38,8 @@ function drush_islandora_solr_query_set_test() {
   );
 
 
-
-  $query = $iqs->build_field_subquery('', $dc_title);
-  drush_print('FIELD QUERY: ' . $query);
+//  $query = $iqs->build_field_subquery('', $dc_title);
+//  drush_print('FIELD QUERY: ' . $query);
 
 
   /**
