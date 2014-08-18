@@ -213,3 +213,6 @@ __f__:
     * A key-value pair where the key is the field name, and the value an __F__
     * See the Solr Fields Array grammar.
 
+### Solr Relationship Array
+
+@TODO
