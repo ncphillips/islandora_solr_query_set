@@ -1,0 +1,5 @@
+name = "Islandora Solr Query Set"
+dependencies[] = islandora
+files[] = includes/IslandoraSolrQuerySet.inc
+version = 7.x-dev
+core = 7.x
