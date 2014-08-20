@@ -1,3 +1,4 @@
 <?php
 
-module_load_include('inc', 'islandora_solr_query_set', 'includes/IslandoraSolrQuerySet');
+module_load_include('inc', 'islandora_solr_query_set', 'includes/IslandoraSolrQueryset');
+module_load_include('inc', 'islandora_solr_query_set', 'includes/IslandoraSolrQueryObject');

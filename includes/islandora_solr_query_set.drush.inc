@@ -24,46 +24,8 @@ function islandora_solr_query_set_drush_command() {
 
 //drush hook
 function drush_islandora_solr_query_set_test() {
-  module_load_include('inc', 'islandora_solr_query', 'includes/IslandoraSolrQuerySet');
-  $iqs = new IslandoraSolrQuerySet();
+  module_load_include('inc', 'islandora_solr_query_set', 'includes/IslandoraSolrQueryObject');
+  $iqs = new IslandoraSolrQueryObject();
 
-  /**
-   * dctitle is "Islandora Bioinformatics" or "BANANA"
-   * AND
-   * dcname is not "John Dow"
-   */
-  $dc_title= array(
-    '#not' => array('a'=> ['b'],),
-    '#or' => array('a'=> array('b')),
-  );
-
-
-//  $query = $iqs->build_field_subquery('', $dc_title);
-//  drush_print('FIELD QUERY: ' . $query);
-
-
-  /**
-   * CModel is specimen but not (microbe or tunicate)
-   */
-  $cmodels = array(
-    'islandora:specimen_cmodel',
-    '#not' => array(
-      'islandora:microbe_cmodel',
-      '#or' => array(
-        'islandora:tunicate_cmodel',
-      )
-    )
-  );
-
-
-
-
-
-
-
-
-//  $query = $iqs->build_cmodel_subquery($cmodels);
-//  drush_print('CMODEL QUERY: ' . $query);
 
 }
-
