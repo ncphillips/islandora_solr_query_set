@@ -120,15 +120,14 @@ class IslandoraSolrQueryset extends MagicProperty{
    * @see IslandoraSolrQueryProcessor::buildAndExecuteQuery
    */
   private function execute_query(){
-    $_GET['page'] = $this->page;
+    $_GET['page'] = $this->__page;
+   
     $this->query_processor->buildAndExecuteQuery($this->__query);
     $this->__objects = array();
 
     $solr_results = $this->query_processor->islandoraSolrResult;
-    if(!isset($solr_results['response']['objects'])){
-      foreach($solr_results['response']['objects'] as $object){
-        $this->__objects[] = new IslandoraSolrQueryObject($object);
-      }
+    foreach($solr_results['response']['objects'] as $object){
+      $this->__objects[] = new IslandoraSolrQueryObject($object);
     }
   }
 
