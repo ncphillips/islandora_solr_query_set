@@ -185,7 +185,7 @@ class IslandoraSolrQueryset extends MagicProperty{
     // Evaluate the Values.
     $values = array();
     foreach ($cmq_array as $value){
-      $values[] = 'RELS_EXT_hasModel_uri_ms:"' . $value .'"';
+      $values[] = 'RELS_EXT_hasModel_uri_ms:' . str_replace(':', '\:', $value);
 //      $value_strings[] = 'RELS_EXT_hasModel_uri_ms:"info:fedora/' . $value .'"';
     }
 
@@ -257,7 +257,7 @@ class IslandoraSolrQueryset extends MagicProperty{
     $values = array();
     if ($field){
       foreach ($fa as $value){
-        $values[] = "$field:\"$value\"";
+        $values[] = "$field:" . str_replace(':', '\:', $value);
       }
     }
 
