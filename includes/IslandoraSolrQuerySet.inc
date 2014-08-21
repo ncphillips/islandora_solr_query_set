@@ -188,7 +188,7 @@ class IslandoraSolrQueryset extends MagicProperty{
     $values = array();
     foreach ($cmq_array as $value){
       $values[] = 'RELS_EXT_hasModel_uri_ms:' . str_replace(':', '\:', $value);
-//      $value_strings[] = 'RELS_EXT_hasModel_uri_ms:"info:fedora/' . $value .'"';
+      $value_strings[] = 'RELS_EXT_hasModel_uri_ms:info\:fedora/' . str_replace(':', '\:', $value);
     }
 
     $value_string = implode(' AND ', $values);
