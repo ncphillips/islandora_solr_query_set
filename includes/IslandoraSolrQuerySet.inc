@@ -125,8 +125,10 @@ class IslandoraSolrQueryset extends MagicProperty{
     $this->__objects = array();
 
     $solr_results = $this->query_processor->islandoraSolrResult;
-    foreach($solr_results['response']['objects'] as $object){
-      $this->__objects[] = new IslandoraSolrQueryObject($object);
+    if(!isset($solr_results['response']['objects'])){
+      foreach($solr_results['response']['objects'] as $object){
+        $this->__objects[] = new IslandoraSolrQueryObject($object);
+      }
     }
   }
 
