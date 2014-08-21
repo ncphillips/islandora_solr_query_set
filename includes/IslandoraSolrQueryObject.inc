@@ -7,7 +7,7 @@
  */
 
 
-class IslandoraSolrQueryObject extends \MagicProperty{
+class IslandoraSolrQueryObject extends MagicProperty{
 
   private $__fields;
   protected $id;
