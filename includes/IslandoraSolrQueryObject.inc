@@ -7,6 +7,8 @@
  */
 
 
+@include_once 'sites/all/libraries/tuque/MagicProperty.php';
+
 class IslandoraSolrQueryObject extends MagicProperty{
 
   private $__fields;

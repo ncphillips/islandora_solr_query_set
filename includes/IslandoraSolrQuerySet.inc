@@ -6,6 +6,8 @@
  * Time: 4:40 PM
  */
 
+@include_once 'sites/all/libraries/tuque/MagicProperty.php';
+
 class IslandoraSolrQueryset extends MagicProperty{
   // Query Grammar Arrays
   public $fields;
